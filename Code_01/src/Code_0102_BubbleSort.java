@@ -35,7 +35,7 @@ public class Code_0102_BubbleSort {
      */
     private static void swap(int[] arr, int i, int j) {
         int k = arr[i];
-        arr[j] = arr[i];
-        arr[i] = k;
+        arr[i] = arr[j];
+        arr[j] = k;
     }
 }
