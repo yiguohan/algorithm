@@ -18,7 +18,7 @@ public class Code_0103_SelectionSort {
         }
         for (int i = arr.length - 1; i > 1; i--) {
             int maxIndex = 0;
-            for (int j = 0; j < i; j++) {
+            for (int j = 0; j <= i; j++) {
                 if (arr[j] > arr[maxIndex]) {
                     maxIndex = j;
                 }
@@ -36,7 +36,7 @@ public class Code_0103_SelectionSort {
      */
     private static void swap(int[] arr, int i, int j) {
         int k = arr[i];
-        arr[j] = arr[i];
-        arr[i] = k;
+        arr[i] = arr[j];
+        arr[j] = k;
     }
 }
