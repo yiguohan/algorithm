@@ -22,7 +22,7 @@ public class Code_0106_SmallSum {
     }
 
     private static int process(int[] arr) {
-        if (arr == null && arr.length < 2) {
+        if (arr == null || arr.length < 2) {
             return 0;
         }
         return mergeSort(arr, 0, arr.length - 1);
