@@ -52,6 +52,12 @@ public class Code_0302_RadixSort {
         }
     }
 
+    /**
+     * 去某一位的数字
+     * @param x 原数
+     * @param d 位数（个位起，1开始）
+     * @return
+     */
     public static int getDigit(int x, int d) {
         return ((x / ((int) Math.pow(10, d - 1))) % 10);
     }
