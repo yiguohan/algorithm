@@ -1,9 +1,11 @@
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
- * * 仅用队列结构实现栈结构
+ * 仅用栈结构实现队列结构
  * <p>
- * * 仅用栈结构实现队列结构
+ * *仅用队列结构实现栈结构
  */
 public class Code_0404_StackAndQueueConvert {
 
@@ -57,7 +59,65 @@ public class Code_0404_StackAndQueueConvert {
         }
     }
 
+    /**
+     * 仅用队列结构实现栈结构
+     * <p>
+     * 思路：
+     * 1. 队列的具体实现可使用LinkedList，入队、出队和peek分别对应方法add/poll/peek
+     * <p>
+     * 2. 准备两个队列对象，一个叫queue，一个叫help
+     * <p>
+     * 3. 入队加入queue操作
+     * <p>
+     * 4. 出队时循环queue把所有数依序放入help，留下最后一个返回，queue和help交换引用
+     * <p>
+     * 5. peek操作类似出队，不同点在于返回最后一个同时还要加进help队列中
+     */
     public static class TwoQueuesStack {
+        private Queue<Integer> queue;
+        private Queue<Integer> help;
 
+        public TwoQueuesStack() {
+            queue = new LinkedList<>();
+            help = new LinkedList<>();
+        }
+
+        public void push(int pushInt) {
+            queue.add(pushInt);
+        }
+
+        public int pop() {
+            if (queue.size() == 0) {
+                throw new IndexOutOfBoundsException("empty");
+            }
+
+            while (queue.size() > 1) {
+                help.add(queue.poll());
+            }
+            int res = queue.poll();
+            swap();
+            return res;
+
+        }
+
+        public int peek() {
+            if (queue.size() == 0) {
+                throw new IndexOutOfBoundsException("empty");
+            }
+
+            while (queue.size() > 1) {
+                help.add(queue.poll());
+            }
+            int res = queue.poll();
+            swap();
+            help.add(res);
+            return res;
+        }
+
+        private void swap() {
+            Queue<Integer> temp = queue;
+            queue = help;
+            help = temp;
+        }
     }
 }
