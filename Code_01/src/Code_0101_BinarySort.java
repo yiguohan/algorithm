@@ -46,10 +46,8 @@ public class Code_0101_BinarySort {
             int mid = start + (end - start) / 2;
             if (arr[mid] > target) {
                 end = mid - 1;
-                continue;
             } else if (arr[mid] < target) {
                 start = mid + 1;
-                continue;
             } else {
                 return mid;
             }

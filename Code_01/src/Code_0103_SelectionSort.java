@@ -5,6 +5,11 @@ import java.util.Arrays;
  */
 public class Code_0103_SelectionSort {
 
+    /**
+     * 在数组的一定范围内逐个和最大值进行比较，如果比它大就刷新最大值的索引（默认是0），选出最大的之后缩小数组边界
+     *
+     * @param arr
+     */
     private static void selectionSort(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;

@@ -4,7 +4,11 @@ import java.util.Arrays;
  * 冒泡排序
  */
 public class Code_0102_BubbleSort {
-
+    /**
+     * 从数组头部开始相邻比较 一直把大的放后面，一轮过后数组最后的数就是最大的 然后把数组的终点边界缩小1，再进行下一轮
+     *
+     * @param arr
+     */
     private static void bubbleSort(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;
