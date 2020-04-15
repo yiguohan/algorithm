@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 /**
  * 插入排序
+ * 划分排好序的边界 边界外的元素从边界开始与排序边界内的元素逐一比较，保证每次插入后边界内都是有序的，然后增加边界范围，进行下次插入
  */
 public class Code_0104_InsertionSort {
 
